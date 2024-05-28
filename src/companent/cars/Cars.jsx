@@ -71,8 +71,8 @@ const Cars = () => {
                                 <td>{item.brend}</td>
                                 <td>
                                     <div className="d-flex gap-2 align-items-center">
-                                        <button className='btn btn-info'> <FaEdit /> </button>
-                                        <button onClick={() => deleteUser(index)} className='btn btn-danger '> <FaTrashAlt /> </button>
+                                        <button className='btn btn-info mx-1'> <FaEdit /> </button>
+                                        <button onClick={() => deleteUser(index)} className='btn btn-danger mx-3'> <FaTrashAlt /> </button>
                                         <NavLink to="/single-car/1" className="btn btn-primary">
                                             <span><FaEye /></span>
                                         </NavLink>
