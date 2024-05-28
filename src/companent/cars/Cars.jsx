@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 import UserModal from '../modal'
 import { FaEdit } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
+import { FaEye } from "react-icons/fa";
+
 
 
 const Cars = () => {
-    const [cars, setCars] = useState([])
+    const [cars, setCars] = useState([
+        {name:"jvrih", price:"246", year:"2025", color:"white", brend:"fjsodl"}
+    ])
     const [modal, setModal] = useState(false)
     const openModal = () => {
         setModal(true)
@@ -54,11 +59,12 @@ const Cars = () => {
                                 <td>{item.color}</td>
                                 <td>{item.brend}</td>
                                 <td>
-                                    <div className="d-flex gap-2">
+                                    <div className="d-flex gap-2 align-items-center">
                                         <button className='btn btn-info'> <FaEdit /> </button>
                                         <button className='btn btn-danger '> <FaTrashAlt /> </button>
-                                        {/* <i className ="fa-solid fa-pen-to-square"></i>
-                                        <i className="fa-solid fa-trash-can"></i> */}
+                                        <NavLink to="/single-car/1" className="btn btn-primary">
+                                            <span><FaEye /></span>
+                                        </NavLink>
                                     </div>
                                 </td>
                             </tr>

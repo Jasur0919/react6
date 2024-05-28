@@ -6,6 +6,7 @@ const UserModal = (props) => {
     const handleChange = (e) => {
         const {name, value} = e.target
         setForm({...form, [name]:value})
+        e.target.reset()
     }
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -14,6 +15,7 @@ const UserModal = (props) => {
         cars.push(form)
         setCars([...cars])
         toggle()
+        e.target.reset()
     }
   return (
     <>
