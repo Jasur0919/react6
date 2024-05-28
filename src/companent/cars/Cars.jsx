@@ -7,14 +7,20 @@ import { FaEye } from "react-icons/fa";
 
 
 
+
 const Cars = () => {
-    const [cars, setCars] = useState([
-        {name:"jvrih", price:"246", year:"2025", color:"white", brend:"fjsodl"}
-    ])
+    const [cars, setCars] = useState([])
+    const [search, setSearch] = useState("")
     const [modal, setModal] = useState(false)
     const openModal = () => {
         setModal(true)
     }
+
+    const deleteUser = (i) => {
+       let new_users = cars.filter((item,index) => index !== i)
+       setCars([...new_users])
+    }
+    console.log(search);
   return (
 <>
     <UserModal open={modal} toggle={() => setModal(false)} cars={cars} setCars={setCars}/>
@@ -26,7 +32,7 @@ const Cars = () => {
                         <button className='btn btn-success' onClick={() => setModal(true)}>Open modal</button>
                     </div>
                     <div className="col-8">
-                        <input type="text" placeholder='Search...' className='form-control' />
+                        <input type="text" placeholder='Search...' onChange={(e)=> setSearch(e.target.value)} className='form-control' />
                     </div>
                 </div>
 
@@ -50,7 +56,12 @@ const Cars = () => {
                 </thead>
                 <tbody>
                     {
-                        cars?.map((item, index) => (
+                        cars?.filter((item) => {
+                            if(item?.name?.toLowerCase().includes(search.toLowerCase())){
+                                return item
+                            }
+                        })
+                        .map((item, index) => (
                             <tr key={index}>
                                 <td>{index + 1}</td>
                                 <td>{item.name}</td>
@@ -61,7 +72,7 @@ const Cars = () => {
                                 <td>
                                     <div className="d-flex gap-2 align-items-center">
                                         <button className='btn btn-info'> <FaEdit /> </button>
-                                        <button className='btn btn-danger '> <FaTrashAlt /> </button>
+                                        <button onClick={() => deleteUser(index)} className='btn btn-danger '> <FaTrashAlt /> </button>
                                         <NavLink to="/single-car/1" className="btn btn-primary">
                                             <span><FaEye /></span>
                                         </NavLink>
