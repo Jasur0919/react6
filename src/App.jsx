@@ -5,12 +5,13 @@ import Login from './companent/login/Login'
 import Cars from './companent/cars/Cars'
 import SingleCar from './companent/single-car/Single-car'
 import Aos from 'aos'
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
 
-  useEffect(() => {
-    Aos.init({duration: 1000})
-  },[])
+  // useEffect(() => {
+  //   Aos.init({duration: 1000})
+  // },[])
   
   const [count, setCount] = useState(0)
 

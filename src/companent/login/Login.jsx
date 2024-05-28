@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import Notifecation from "../../utils/notification"
 
 const Login = () => {
     const [form, setForm] = useState({})
@@ -13,14 +15,22 @@ const Login = () => {
         console.log(form);
         const {username, password} = form
         if(username === "admin" && password === "123"){
+            Notifecation({title: "Muvafaqiyatli o'tdingiz" , type: "success"})
+           setTimeout(() => {
             navigate("/cars")
+           }, 1500);
         }else {
             alert("failure")
         }
 
+        // setTimeout(() => {
+        //     navigate("/cars")
+        // }, 1000 )
+
     }
   return (
  <>
+    <ToastContainer/>
     <div className="container">
         <div className="row mt-2">
             <div className="col-md-6 offset-3">

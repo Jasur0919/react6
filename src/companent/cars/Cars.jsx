@@ -22,6 +22,7 @@ const Cars = () => {
     const deleteUser = (i) => {
        let new_users = cars.filter((item, index) => index !== i)
        setCars([...new_users])
+       
     }
     // console.log(search);
   return (
