@@ -4,8 +4,14 @@ import { Routes, Route } from 'react-router-dom'
 import Login from './companent/login/Login'
 import Cars from './companent/cars/Cars'
 import SingleCar from './companent/single-car/Single-car'
+import Aos from 'aos'
 
 function App() {
+
+  useEffect(() => {
+    Aos.init({duration: 1000})
+  },[])
+  
   const [count, setCount] = useState(0)
 
   return (

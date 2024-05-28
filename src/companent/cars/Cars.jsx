@@ -9,18 +9,21 @@ import { FaEye } from "react-icons/fa";
 
 
 const Cars = () => {
+    
     const [cars, setCars] = useState([])
     const [search, setSearch] = useState("")
     const [modal, setModal] = useState(false)
     const openModal = () => {
         setModal(true)
+       i.target.reset()
+
     }
 
     const deleteUser = (i) => {
-       let new_users = cars.filter((item,index) => index !== i)
+       let new_users = cars.filter((item, index) => index !== i)
        setCars([...new_users])
     }
-    console.log(search);
+    // console.log(search);
   return (
 <>
     <UserModal open={modal} toggle={() => setModal(false)} cars={cars} setCars={setCars}/>
@@ -35,9 +38,6 @@ const Cars = () => {
                         <input type="text" placeholder='Search...' onChange={(e)=> setSearch(e.target.value)} className='form-control' />
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 

@@ -17,7 +17,6 @@ const Login = () => {
         }else {
             alert("failure")
         }
-        e.target.reset()
 
     }
   return (
