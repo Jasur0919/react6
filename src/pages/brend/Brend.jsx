@@ -34,7 +34,7 @@ const Brend = () => {
     
   return (
     <div>
-        <h1>Brend</h1>
+        <h1 className='h1'>Brend-Products</h1>
 
         <div className="cards">
             {cards}
