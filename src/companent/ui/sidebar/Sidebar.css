@@ -1,0 +1,17 @@
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background: rgb(51, 50, 50);
+    color: white;
+}
+
+.sidebar_link {
+    color: rgb(252, 251, 251);
+    background: white;
+    margin: auto;
+    text-align: center;
+}
+
+/* .key {
+    width: 70px;
+} */

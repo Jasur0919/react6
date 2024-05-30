@@ -1,30 +1,31 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import Notifecation from "../../utils/notification"
+import Cars from '../cars/Cars'
 
 const Login = () => {
     const [form, setForm] = useState({})
     const navigate = useNavigate()
     const handleChange = (event) => {
         const {value, name} = event.target
-        setForm({...form, [name]:value})
+        setForm({...form, [name]:value})   
     }
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(form);
         const {username, password} = form
         if(username === "admin" && password === "123"){
-            Notifecation({title: "Muvafaqiyatli o'tdingiz" , type: "success"})
-           setTimeout(() => {
-            navigate("/cars")
-           }, 1500);
+              navigate("/main")
+           
+            
         }else {
-            alert("failure")
+            alert("404")
         }
 
         // setTimeout(() => {
-        //     navigate("/cars")
+        //     navigate("/main")
         // }, 1000 )
 
     }

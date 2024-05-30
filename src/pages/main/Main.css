@@ -1,0 +1,12 @@
+.main_layout {
+    width: 100%;
+    display: flex;
+}
+
+.main {
+    padding: 20px;
+}
+
+.main_left {
+    width: 100%;
+}

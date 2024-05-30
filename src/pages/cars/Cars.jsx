@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import UserModal from '../../../companent/modal'
+import UserModal from '../../companent/modal'
 import { FaEdit } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';

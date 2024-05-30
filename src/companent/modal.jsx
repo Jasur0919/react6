@@ -2,11 +2,14 @@ import { useState } from "react"
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap"
 
 const UserModal = (props) => {
+    const [out, setOut] = useState(false)
+    const handleOut = () => {
+        out(true)
+    }
     const [form, setForm] = useState({})
     const handleChange = (e) => {
         const {name, value} = e.target
         setForm({...form, [name]:value})
-        e.target.reset()
     }
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -15,7 +18,7 @@ const UserModal = (props) => {
         cars.push(form)
         setCars([...cars])
         toggle()
-        e.target.reset()
+        e.target.reset("")
     }
   return (
     <>
@@ -34,7 +37,7 @@ const UserModal = (props) => {
             </ModalBody>
             <ModalFooter>
                 <button className="btn btn-danger" onClick={props.toggle}>cancel</button>
-                <button className="btn btn-success" type="submit" form="submit" >save</button>
+                <button className="btn btn-success" onClick={() => setOut(!handleOut)} type="submit" form="submit" >save</button>
             </ModalFooter>
         </Modal>
     </>
